@@ -3,13 +3,13 @@ package com.cyanococcus.budget.app.model;
 public class Expense {
     private long id;
     private String location;
-    private double quantity;
+    private Double quantity;
     private long date;
     private String description;
 
     public Expense() {  }
 
-    public Expense(long id, String location, double quantity, long date, String description) {
+    public Expense(long id, String location, Double quantity, long date, String description) {
         this.id = id;
         this.location = location;
         this.quantity = quantity;
@@ -33,11 +33,11 @@ public class Expense {
         this.location = location;
     }
 
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 

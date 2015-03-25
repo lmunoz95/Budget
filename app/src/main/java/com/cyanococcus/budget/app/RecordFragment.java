@@ -102,6 +102,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
             protected void onPostExecute(Long result) {
 
                 if(result != -1) {
+                    clear();
                     Toast.makeText(getActivity(), getString(R.string.successful), Toast.LENGTH_SHORT).show();
                 } else {
                     new AlertDialog.Builder(getActivity())
@@ -136,6 +137,8 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
         String description = mDescription.getText().toString();
         if(!description.isEmpty()) {
             e.setDescription(description);
+        } else {
+            e.setDescription(null);
         }
 
         return e;

@@ -98,7 +98,7 @@ public class
                         ExpenseEntry.COLUMN_INFODATE + "," +
                         ExpenseEntry.COLUMN_DESCRIPTION +
                     " FROM " + ExpenseEntry.TABLE_NAME +
-                    " WHERE " + ExpenseEntry.COLUMN_INFODATE + " BETWEEN ? AND ?"
+                    " WHERE " + ExpenseEntry.COLUMN_INFODATE + " >= ? AND " + ExpenseEntry.COLUMN_INFODATE + " <= ?"
                 , new String[] {
                         String.valueOf(initialDate),
                         String.valueOf(endDate)
