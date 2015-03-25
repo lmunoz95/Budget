@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="nd_divider">#272727</color>
+    <color name="nd_bg_normal">#303030</color>
+    <color name="nd_bg_pressed">#992416</color>
+</resources>

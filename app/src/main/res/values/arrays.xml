@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_items">
+        <item>@string/record</item>
+        <item>@string/history</item>
+        <item>@string/search</item>
+        <item>@string/exit</item>
+    </string-array>
+
+    <string-array name="drawer_icons">
+        <item>@drawable/ic_menu_record</item>
+        <item>@drawable/ic_menu_history</item>
+        <item>@drawable/ic_menu_search</item>
+        <item>@drawable/ic_menu_exit</item>
+    </string-array>
+</resources>
