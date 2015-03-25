@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="gray_01">#424242</color>
+    <color name="gray_02">#222222</color>
+    <color name="green_01">#66cc33</color>
+    <color name="green_02">#46ac03</color>
     <color name="nd_divider">#272727</color>
     <color name="nd_bg_normal">#303030</color>
     <color name="nd_bg_pressed">#992416</color>

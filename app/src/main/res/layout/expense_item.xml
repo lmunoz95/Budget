@@ -8,11 +8,29 @@
     <TextView
         android:id="@+id/tv_location"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"/>
 
     <TextView
         android:id="@+id/tv_quantity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"/>
 
 </LinearLayout>

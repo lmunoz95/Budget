@@ -15,8 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.cyanococcus.budget.app.adapter.NavigationDrawerAdapter;
-import com.cyanococcus.budget.app.data.BudgetDbHelper;
-import com.cyanococcus.budget.app.data.Expense;
 import com.cyanococcus.budget.app.model.NavigationDrawerItem;
 
 import java.util.ArrayList;
@@ -163,7 +161,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 fragment = new HistoryFragment();
                 break;
             case 2:
-                fragment = new SearchFragment();
+                fragment = new SearchInputFragment();
                 break;
             case 3:
                 System.exit(0);

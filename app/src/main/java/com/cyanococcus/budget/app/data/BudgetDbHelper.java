@@ -3,14 +3,17 @@ package com.cyanococcus.budget.app.data;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.cyanococcus.budget.app.data.BudgetContract.ExpenseEntry;
+import com.cyanococcus.budget.app.model.Expense;
 
 import java.util.ArrayList;
 
-public class BudgetDbHelper extends SQLiteOpenHelper {
+public class
+        BudgetDbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "budget.db";
 
@@ -37,7 +40,7 @@ public class BudgetDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insert(Expense expense) {
+    public long insert(Expense expense) throws SQLException {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -46,7 +49,7 @@ public class BudgetDbHelper extends SQLiteOpenHelper {
         values.put(ExpenseEntry.COLUMN_INFODATE, expense.getDate());
         values.put(ExpenseEntry.COLUMN_DESCRIPTION, expense.getDescription());
 
-        long id = db.insert(ExpenseEntry.TABLE_NAME, null, values);
+        long id = db.insertOrThrow(ExpenseEntry.TABLE_NAME, null, values);
         db.close();
 
         return id;

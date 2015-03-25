@@ -1,4 +1,4 @@
-package com.cyanococcus.budget.app.data;
+package com.cyanococcus.budget.app.model;
 
 public class Expense {
     private long id;
