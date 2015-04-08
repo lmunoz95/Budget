@@ -4,18 +4,13 @@ package com.cyanococcus.budget.app;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import static com.cyanococcus.budget.app.data.BudgetDbHelper.normalize;
 
 
 /**
@@ -62,17 +57,5 @@ public class SearchInputFragment extends Fragment implements View.OnClickListene
             intent.putExtra("END_DATE", normalize(mEndDate));
             startActivity(intent);
         }
-    }
-
-    public static long normalize(DatePicker picker) {
-        Date date = new Date(picker.getCalendarView().getDate());
-        Calendar cal =  Calendar.getInstance();
-        cal.setTime(date);
-
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        return cal.getTimeInMillis();
     }
 }

@@ -20,6 +20,8 @@ import com.cyanococcus.budget.app.model.Expense;
 
 import java.util.Date;
 
+import static com.cyanococcus.budget.app.data.BudgetDbHelper.normalize;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -132,7 +134,7 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
             e.setQuantity(Double.parseDouble(quantity));
         }
 
-        e.setDate(mPicker.getCalendarView().getDate());
+        e.setDate(normalize(mPicker));
 
         String description = mDescription.getText().toString();
         if(!description.isEmpty()) {
