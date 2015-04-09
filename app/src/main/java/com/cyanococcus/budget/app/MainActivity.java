@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,6 +47,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.activity_main);
 
         mTitle = mDrawerTitle = getTitle();
+
 
         // load slide menu items
         menuTitles = getResources().getStringArray(R.array.drawer_items);
@@ -114,8 +117,21 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             return true;
         }
 
+        int id = item.getItemId();
+        if(id == R.id.action_exit) {
+            System.exit(0);
+        }
+
         // Handle action bar actions click
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+       // inflater.inflate(R.menu.main, menu);
+
+        return true;
     }
 
     @Override
