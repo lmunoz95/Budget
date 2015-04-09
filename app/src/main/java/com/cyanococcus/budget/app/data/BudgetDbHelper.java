@@ -6,11 +6,14 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.DatePicker;
 
 import com.cyanococcus.budget.app.data.BudgetContract.ExpenseEntry;
 import com.cyanococcus.budget.app.model.Expense;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class
         BudgetDbHelper extends SQLiteOpenHelper {
@@ -38,6 +41,18 @@ public class
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXITS " + ExpenseEntry.TABLE_NAME);
         onCreate(db);
+    }
+
+    public static long normalize(DatePicker picker) {
+        Date date = new Date(picker.getCalendarView().getDate());
+        Calendar cal =  Calendar.getInstance();
+        cal.setTime(date);
+
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTimeInMillis();
     }
 
     public long insert(Expense expense) throws SQLException {
