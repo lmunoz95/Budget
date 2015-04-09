@@ -70,8 +70,35 @@ public class RecordFragment extends Fragment implements View.OnClickListener {
         if(v.getId() == mClear.getId()) {
             clear();
         } else if(v.getId() == mSave.getId()) {
+           if(!validateFields ())
+               return;
+
             save().execute();
         }
+    }
+
+    private boolean validateFields (){
+        boolean valid = true;
+
+        String location = mLocation.getText().toString();
+        if(location.isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.vLocation), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        String quantity = mQuantity.getText().toString();
+        if(quantity.isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.vQuantity), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        String description = mDescription.getText().toString();
+        if(description.isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.vDescription), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return valid;
     }
 
     private void clear() {

@@ -26,4 +26,8 @@
     <string name="clear">Clear</string>
     <string name="save">Save</string>
     <string name="successful">successfully added</string>
+<!-- Validations Fields -->
+    <string name="vLocation">Please insert Location</string>
+    <string name="vQuantity">Please insert Quantity</string>
+    <string name="vDescription">Please insert Description</string>
 </resources>

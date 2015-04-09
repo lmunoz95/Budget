@@ -33,16 +33,16 @@ public class ExpenseAdapter extends ArrayAdapter<Expense> {
         TextView tvDate = (TextView) convertView.findViewById(R.id.tv_date);
         TextView tvDescription = (TextView) convertView.findViewById(R.id.tv_description);
 
-        tvLocation.setText(item.getLocation());
+        tvLocation.setText("Location: " + item.getLocation());
 
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-        tvQuantity.setText(numberFormat.format(item.getQuantity()));
+        tvQuantity.setText("Quantity: " + numberFormat.format(item.getQuantity()));
 
         Date date = new Date(item.getDate());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/M/yyyy");
-        tvDate.setText(simpleDateFormat.format(date));
+        tvDate.setText("Date: " + simpleDateFormat.format(date));
 
-        tvDescription.setText(item.getDescription());
+        tvDescription.setText("Description: " + item.getDescription());
 
         return convertView;
     }
